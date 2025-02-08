@@ -7,6 +7,10 @@
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
+    "extra": {
+      "apiKey": "70d6ef901f84a9596c55ba95b131f50a",
+      "apiHost": "v1.formula-1.api-sports.io"
+    },
     "splash": {
       "image": "./assets/splash-icon.png",
       "resizeMode": "contain",
@@ -21,6 +25,8 @@
         "backgroundColor": "#ffffff"
       }
     },
+
+    
     "web": {
       "favicon": "./assets/favicon.png"
     }
