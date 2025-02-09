@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createStackNavigator } from "@react-navigation/stack";
-import HomeScreen from "./src/screens/HomeScreen.js";
 import axios from "axios";
 import Constants from "expo-constants";
-import CardPiloto from "./src/components/CardPiloto";
-import PainelFavoritos from "./src/components/PainelFavoritos";
 import TabNavigator from "./src/navigation/TabNavigator.js";
-
-
-const Stack = createStackNavigator();
 
 const App = () => {
   const [todosPilotos, setTodosPilotos] = useState([]);
@@ -17,13 +10,16 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
 
+  // Função para gerar um ID único para cada piloto
   const gerarIdUnico = (piloto) => {
     return `${piloto.name}-${piloto.nationality}`.toLowerCase().replace(/\s+/g, "-");
   };
 
+  // chave api
   const API_KEY = Constants.expoConfig.extra.apiKey;
   const API_HOST = Constants.expoConfig.extra.apiHost;
 
+  // busca de pilotos
   const fetchPilotos = async (nome) => {
     try {
       setLoading(true);
@@ -49,15 +45,32 @@ const App = () => {
     }
   };
 
-  // return (
-  //   <NavigationContainer>
-  //     <Stack.Navigator screenOptions={{ headerShown: false }}>
-  //       <Stack.Screen name="Home" component={HomeScreen} />
-  //     </Stack.Navigator>
-  //   </NavigationContainer>
-  // );
+  // adicionar pilotos aos favoritos
+  const adicionarFavorito = (piloto) => {
+    setFavoritos((prevFavoritos) => [...prevFavoritos, piloto]);
+  };
 
-  return <TabNavigator/>
+  // remover pilotos dos favoritos
+  const removerFavorito = (pilotoId) => {
+    setFavoritos((prevFavoritos) =>
+      prevFavoritos.filter((piloto) => piloto.driverId !== pilotoId)
+    );
+  };
+
+  return (
+    <NavigationContainer>
+      <TabNavigator
+        todosPilotos={todosPilotos}
+        favoritos={favoritos}
+        searchTerm={searchTerm}
+        loading={loading}
+        fetchPilotos={fetchPilotos}
+        adicionarFavorito={adicionarFavorito}
+        removerFavorito={removerFavorito}
+        setSearchTerm={setSearchTerm}
+      />
+    </NavigationContainer>
+  );
 };
 
 export default App;

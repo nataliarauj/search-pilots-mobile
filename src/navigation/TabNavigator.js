@@ -1,35 +1,61 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
 import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import FavoritosScreen from "../screens/FavoritosScreen";
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigator = () => {
+const TabNavigator = ({
+  todosPilotos,
+  favoritos,
+  searchTerm,
+  loading,
+  fetchPilotos,
+  adicionarFavorito,
+  removerFavorito,
+  setSearchTerm,
+}) => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        screenOptions={({ route }) => ({
-          tabBarIcon: ({ color, size }) => {
-            let iconName;
-            if (route.name === "Início") {
-              iconName = "home";
-            } else if (route.name === "Favoritos") {
-              iconName = "heart";
-            }
-            return <Ionicons name={iconName} size={size} color={color} />;
-          },
-          tabBarActiveTintColor: "red",
-          tabBarInactiveTintColor: "gray",
-          headerShown: false, // Esconde o cabeçalho padrão
-        })}
-      >
-        <Tab.Screen name="Início" component={HomeScreen} />
-        <Tab.Screen name="Favoritos" component={FavoritosScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ color, size }) => {
+          let iconName;
+          if (route.name === "Início") {
+            iconName = "home";
+          } else if (route.name === "Favoritos") {
+            iconName = "heart";
+          }
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "red",
+        tabBarInactiveTintColor: "gray",
+        headerShown: false, // Esconde o cabeçalho padrão
+      })}
+    >
+      <Tab.Screen name="Início">
+        {(props) => (
+          <HomeScreen
+            {...props}
+            todosPilotos={todosPilotos}
+            searchTerm={searchTerm}
+            loading={loading}
+            fetchPilotos={fetchPilotos}
+            setSearchTerm={setSearchTerm}
+            adicionarFavorito={adicionarFavorito}
+          />
+        )}
+      </Tab.Screen>
+      <Tab.Screen name="Favoritos">
+        {(props) => (
+          <FavoritosScreen
+            {...props}
+            favoritos={favoritos}
+            removerFavorito={removerFavorito}
+          />
+        )}
+      </Tab.Screen>
+    </Tab.Navigator>
   );
 };
 

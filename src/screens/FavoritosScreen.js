@@ -1,7 +1,6 @@
 import React from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import CardPiloto from "../components/CardPiloto";
-import favoritosStyles from "../styles/favoritosStyles";
 
 const FavoritosScreen = ({ favoritos, removerFavorito }) => {
   return (
@@ -13,7 +12,9 @@ const FavoritosScreen = ({ favoritos, removerFavorito }) => {
         <FlatList
           data={favoritos}
           keyExtractor={(item) => item.driverId}
-          renderItem={({ item }) => <CardPiloto piloto={item} removerFavorito={removerFavorito} />}
+          renderItem={({ item }) => (
+            <CardPiloto piloto={item} removerFavorito={removerFavorito} />
+          )}
         />
       )}
     </View>
