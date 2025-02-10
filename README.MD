@@ -13,13 +13,13 @@ Um aplicativo mobile desenvolvido com React Native que permite pesquisar pilotos
 
 🛠️ Tecnologias Utilizadas
 
-React Native
+- React Native
 
-Expo
+- Expo
 
-Context API (para gerenciar estados globais)
+- Context API (para gerenciar estados globais)
 
-Axios (para consumir APIs)
+- Axios (para consumir APIs)
 
 
 📦 Como Rodar o Projeto
@@ -28,19 +28,19 @@ Clone este repositório:
 
 git clone https://github.com/nataliarauj/search-pilots-mobile.git
 
-Acesse a pasta do projeto:
+- Acesse a pasta do projeto:
 
 cd search-pilots-mobile
 
-Instale as dependências:
+- Instale as dependências:
 
 npm install
 
-Inicie o aplicativo:
+- Inicie o aplicativo:
 
 expo start
 
-Escaneie o QR Code no aplicativo Expo Go (Android/iOS) para rodar no celular.
+-> Escaneie o QR Code no aplicativo Expo Go (Android/iOS) para rodar no celular!
 
 📸 Capturas de Tela
 
