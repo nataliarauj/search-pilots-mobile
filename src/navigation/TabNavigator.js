@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import FavoritosScreen from "../screens/FavoritosScreen";
+import CircuitosScreen from "../screens/CircuitosScreen"; // Importe a nova tela
 
 const Tab = createBottomTabNavigator();
 
@@ -25,6 +26,8 @@ const TabNavigator = ({
             iconName = "home";
           } else if (route.name === "Favoritos") {
             iconName = "heart";
+          } else if (route.name === "Circuitos") {
+            iconName = "map"; // Ícone para a aba de Circuitos
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -55,6 +58,11 @@ const TabNavigator = ({
           />
         )}
       </Tab.Screen>
+      {/* Nova aba para Circuitos */}
+      <Tab.Screen
+        name="Circuitos"
+        component={CircuitosScreen} // Use a tela CircuitosScreen
+      />
     </Tab.Navigator>
   );
 };
