@@ -3,7 +3,6 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import FavoritosScreen from "../screens/FavoritosScreen";
-import MapaScreen from "../screens/MapaScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -26,8 +25,6 @@ const TabNavigator = ({
             iconName = "home";
           } else if (route.name === "Favoritos") {
             iconName = "heart";
-          } else if (route.name === "Circuitos") {
-            iconName = "map";
           }
           return <Ionicons name={iconName} size={size} color={color} />;
         },
@@ -58,7 +55,6 @@ const TabNavigator = ({
           />
         )}
       </Tab.Screen>
-      <Tab.Screen name="Circuitos" component={MapaScreen} />
     </Tab.Navigator>
   );
 };

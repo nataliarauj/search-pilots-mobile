@@ -15,11 +15,11 @@ const App = () => {
     return `${piloto.name}-${piloto.nationality}`.toLowerCase().replace(/\s+/g, "-");
   };
 
-  // chave api
+  // Chaves da API
   const API_KEY = Constants.expoConfig.extra.apiKey;
   const API_HOST = Constants.expoConfig.extra.apiHost;
 
-  // busca de pilotos
+  // Função para buscar pilotos
   const fetchPilotos = async (nome) => {
     try {
       setLoading(true);
@@ -45,12 +45,12 @@ const App = () => {
     }
   };
 
-  // adicionar pilotos aos favoritos
+  // Função para adicionar um piloto aos favoritos
   const adicionarFavorito = (piloto) => {
     setFavoritos((prevFavoritos) => [...prevFavoritos, piloto]);
   };
 
-  // remover pilotos dos favoritos
+  // Função para remover um piloto dos favoritos
   const removerFavorito = (pilotoId) => {
     setFavoritos((prevFavoritos) =>
       prevFavoritos.filter((piloto) => piloto.driverId !== pilotoId)
