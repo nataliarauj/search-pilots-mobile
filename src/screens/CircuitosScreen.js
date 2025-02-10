@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 
 const CircuitosScreen = () => {
-  // Dados dos circuitos (definidos diretamente no código)
+  
   const circuitosData = [
     {
       id: 1,
@@ -166,7 +166,7 @@ const CircuitosScreen = () => {
       latitude: 43.4056,
       longitude: 39.9542,
     },
-    
+
 
   ];
 
@@ -175,9 +175,9 @@ const CircuitosScreen = () => {
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: -14.2350, // Centro do mapa (América do Sul)
+          latitude: -14.2350, 
           longitude: -51.9253,
-          latitudeDelta: 50, // Zoom inicial
+          latitudeDelta: 50, 
           longitudeDelta: 50,
         }}
       >
