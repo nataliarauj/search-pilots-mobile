@@ -1,13 +1,19 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
+
+const { width, height } = Dimensions.get("window");
 
 const favoritosStyles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: "#fff",
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    padding: 20,
+    padding: width * 0.05, // 5% da largura da tela
   },
   title: {
-    fontSize: 24,
+    fontSize: width > 400 ? 28 : 24, // Tamanho maior para telas maiores
     fontWeight: "bold",
     textAlign: "center",
     marginBottom: 20,
@@ -31,6 +37,15 @@ const favoritosStyles = StyleSheet.create({
   buttonText: {
     color: "#fff",
     fontWeight: "bold",
+  },
+  flatListContent: {
+    paddingBottom: 20, // Espaço no final da lista
+  },
+  emptyText: {
+    textAlign: "center",
+    color: "#888",
+    fontSize: 16,
+    marginTop: 20,
   },
 });
 
