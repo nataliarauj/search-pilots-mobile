@@ -3,7 +3,6 @@ import { View, StyleSheet } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 
 const CircuitosScreen = () => {
-  
   const circuitosData = [
     {
       id: 1,
@@ -49,10 +48,10 @@ const CircuitosScreen = () => {
     },
     {
       id: 7,
-  nome: "Circuito de Silverstone",
-  localizacao: "Northamptonshire, Reino Unido",
-  latitude: 52.0786,
-  longitude: -1.0169,
+      nome: "Circuito de Silverstone",
+      localizacao: "Northamptonshire, Reino Unido",
+      latitude: 52.0786,
+      longitude: -1.0169,
     },
     {
       id: 8,
@@ -166,8 +165,6 @@ const CircuitosScreen = () => {
       latitude: 43.4056,
       longitude: 39.9542,
     },
-
-
   ];
 
   return (
@@ -175,9 +172,9 @@ const CircuitosScreen = () => {
       <MapView
         style={styles.map}
         initialRegion={{
-          latitude: -14.2350, 
+          latitude: -14.235,
           longitude: -51.9253,
-          latitudeDelta: 50, 
+          latitudeDelta: 50,
           longitudeDelta: 50,
         }}
       >

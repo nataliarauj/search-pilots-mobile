@@ -12,7 +12,9 @@ const App = () => {
 
   // Função para gerar um ID único para cada piloto
   const gerarIdUnico = (piloto) => {
-    return `${piloto.name}-${piloto.nationality}`.toLowerCase().replace(/\s+/g, "-");
+    return `${piloto.name}-${piloto.nationality}`
+      .toLowerCase()
+      .replace(/\s+/g, "-");
   };
 
   // Chaves da API
@@ -23,13 +25,16 @@ const App = () => {
   const fetchPilotos = async (nome) => {
     try {
       setLoading(true);
-      const response = await axios.get("https://v1.formula-1.api-sports.io/drivers", {
-        headers: {
-          "x-rapidapi-key": API_KEY,
-          "x-rapidapi-host": API_HOST,
-        },
-        params: { search: nome },
-      });
+      const response = await axios.get(
+        "https://v1.formula-1.api-sports.io/drivers",
+        {
+          headers: {
+            "x-rapidapi-key": API_KEY,
+            "x-rapidapi-host": API_HOST,
+          },
+          params: { search: nome },
+        }
+      );
 
       const dadosPilotos = response.data.response || [];
       const pilotosComId = dadosPilotos.map((piloto) => ({

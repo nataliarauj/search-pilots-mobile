@@ -9,7 +9,9 @@ const FavoritosScreen = ({ favoritos, removerFavorito }) => {
       <View style={favoritosStyles.container}>
         <Text style={favoritosStyles.title}>Favoritos</Text>
         {favoritos.length === 0 ? (
-          <Text style={favoritosStyles.emptyText}>Nenhum piloto favoritado.</Text>
+          <Text style={favoritosStyles.emptyText}>
+            Nenhum piloto favoritado.
+          </Text>
         ) : (
           <FlatList
             data={favoritos}

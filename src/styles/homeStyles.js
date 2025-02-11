@@ -13,7 +13,7 @@ const homeStyles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 20,
     color: "#fff",
-    marginTop: 250
+    marginTop: 250,
   },
   searchContainer: {
     flexDirection: "row",
@@ -27,7 +27,7 @@ const homeStyles = StyleSheet.create({
     borderRadius: 5,
     padding: 10,
     backgroundColor: "#fff",
-    marginBottom: 20
+    marginBottom: 20,
   },
   button: {
     marginLeft: 10,

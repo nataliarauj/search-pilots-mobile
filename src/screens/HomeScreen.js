@@ -1,5 +1,13 @@
 import React from "react";
-import { View, Text, TextInput, Button, FlatList, ActivityIndicator, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  TextInput,
+  Button,
+  FlatList,
+  ActivityIndicator,
+  StyleSheet,
+} from "react-native";
 import CardPiloto from "../components/CardPiloto";
 import homeStyles from "../styles/homeStyles";
 
@@ -21,7 +29,11 @@ const HomeScreen = ({
         onChangeText={setSearchTerm}
         onSubmitEditing={() => fetchPilotos(searchTerm)}
       />
-      <Button title="Buscar" onPress={() => fetchPilotos(searchTerm)} disabled={loading} />
+      <Button
+        title="Buscar"
+        onPress={() => fetchPilotos(searchTerm)}
+        disabled={loading}
+      />
 
       {loading && <ActivityIndicator size="large" color="red" />}
 
