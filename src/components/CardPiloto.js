@@ -10,7 +10,10 @@ const CardPiloto = ({ piloto, adicionarFavorito, removerFavorito }) => {
         <Button title="Favoritar" onPress={() => adicionarFavorito(piloto)} />
       )}
       {removerFavorito && (
-        <Button title="Remover" onPress={() => removerFavorito(piloto.driverId)} />
+        <Button
+          title="Remover"
+          onPress={() => removerFavorito(piloto.driverId)}
+        />
       )}
     </View>
   );

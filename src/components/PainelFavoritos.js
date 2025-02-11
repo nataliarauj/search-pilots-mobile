@@ -1,5 +1,11 @@
 import React from "react";
-import { View, Text, FlatList, TouchableOpacity, StyleSheet } from "react-native";
+import {
+  View,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  StyleSheet,
+} from "react-native";
 
 const PainelFavoritos = ({ favoritos, removerFavorito }) => {
   return (
@@ -24,7 +30,14 @@ const PainelFavoritos = ({ favoritos, removerFavorito }) => {
 const styles = StyleSheet.create({
   container: { padding: 20 },
   title: { fontSize: 20, fontWeight: "bold", marginBottom: 10 },
-  favCard: { flexDirection: "row", justifyContent: "space-between", padding: 10, backgroundColor: "#ddd", marginBottom: 5, borderRadius: 5 },
+  favCard: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
+    backgroundColor: "#ddd",
+    marginBottom: 5,
+    borderRadius: 5,
+  },
   favText: { fontSize: 16 },
   removeText: { color: "red", fontWeight: "bold" },
 });

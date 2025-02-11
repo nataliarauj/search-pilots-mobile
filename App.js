@@ -10,7 +10,6 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Função para gerar um ID único para cada piloto
   const gerarIdUnico = (piloto) => {
     return `${piloto.name}-${piloto.nationality}`
       .toLowerCase()
@@ -50,12 +49,10 @@ const App = () => {
     }
   };
 
-  // Função para adicionar um piloto aos favoritos
   const adicionarFavorito = (piloto) => {
     setFavoritos((prevFavoritos) => [...prevFavoritos, piloto]);
   };
 
-  // Função para remover um piloto dos favoritos
   const removerFavorito = (pilotoId) => {
     setFavoritos((prevFavoritos) =>
       prevFavoritos.filter((piloto) => piloto.driverId !== pilotoId)
