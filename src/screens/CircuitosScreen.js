@@ -215,36 +215,6 @@ const CircuitosScreen = () => {
       inauguracao: 1970,
     },
     {
-      id: 22,
-      nome: "Catalunya",
-      localizacao: "Espanha",
-      latitude: 41.57,
-      longitude: 2.2611,
-      comprimento: "4.675 km",
-      curvas: 16,
-      inauguracao: 1991,
-    },
-    {
-      id: 23,
-      nome: "Sepang",
-      localizacao: "Malásia",
-      latitude: 2.7606,
-      longitude: 101.7381,
-      comprimento: "5.543 km",
-      curvas: 15,
-      inauguracao: 1999,
-    },
-    {
-      id: 24,
-      nome: "Kyalami",
-      localizacao: "África do Sul",
-      latitude: -25.9975,
-      longitude: 28.075,
-      comprimento: "4.529 km",
-      curvas: 16,
-      inauguracao: 1961,
-    },
-    {
       id: 25,
       nome: "Sepang",
       localizacao: "Malásia",
@@ -427,3 +397,30 @@ const CircuitosScreen = () => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+  map: {
+    flex: 1,
+  },
+  callout: {
+    width: 200,
+    padding: 5,
+  },
+  nome: {
+    fontSize: 16,
+    fontWeight: "bold",
+  },
+  localizacao: {
+    fontSize: 14,
+    color: "gray",
+    marginBottom: 5,
+  },
+  detalhes: {
+    fontSize: 13,
+  },
+});
+
+export default CircuitosScreen;
