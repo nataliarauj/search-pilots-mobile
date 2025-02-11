@@ -4,6 +4,7 @@ import { Ionicons } from "@expo/vector-icons";
 import HomeScreen from "../screens/HomeScreen";
 import FavoritosScreen from "../screens/FavoritosScreen";
 import CircuitosScreen from "../screens/CircuitosScreen";
+import SobreScreen from "../screens/SobreScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -22,13 +23,17 @@ const TabNavigator = ({
       screenOptions={({ route }) => ({
         tabBarIcon: ({ color, size }) => {
           let iconName;
+
           if (route.name === "Início") {
             iconName = "home";
           } else if (route.name === "Favoritos") {
             iconName = "heart";
           } else if (route.name === "Circuitos") {
             iconName = "map";
+          } else if (route.name === "Sobre") {
+            iconName = "information-circle";
           }
+
           return <Ionicons name={iconName} size={size} color={color} />;
         },
         tabBarActiveTintColor: "red",
@@ -58,8 +63,10 @@ const TabNavigator = ({
           />
         )}
       </Tab.Screen>
-      {/* Nova aba para Circuitos */}
       <Tab.Screen name="Circuitos" component={CircuitosScreen} />
+
+      {}
+      <Tab.Screen name="Sobre" component={SobreScreen} />
     </Tab.Navigator>
   );
 };
