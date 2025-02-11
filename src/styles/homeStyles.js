@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const homeStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1a1a1a",
+    backgroundColor: "#ffffff",
     padding: 20,
     alignItems: "center",
     justifyContent: "center",
@@ -12,7 +12,7 @@ const homeStyles = StyleSheet.create({
     fontSize: 26,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "#fff",
+    color: "#000000",
     marginTop: 250,
   },
   searchContainer: {
@@ -22,21 +22,24 @@ const homeStyles = StyleSheet.create({
     alignItems: "center",
   },
   input: {
-    borderColor: "#fff",
+    borderColor: "#000000",
     borderWidth: 1,
     borderRadius: 5,
     padding: 10,
-    backgroundColor: "#fff",
+    backgroundColor: "#ffffff",
     marginBottom: 20,
+    color: "#000000",
   },
   button: {
     marginLeft: 10,
-    backgroundColor: "#f02e0e",
+    backgroundColor: "#ffffff",
     padding: 10,
     borderRadius: 5,
+    borderWidth: 1,
+    borderColor: "#ff0000",
   },
   buttonText: {
-    color: "#fff",
+    color: "#ff0000",
     fontWeight: "bold",
   },
 });
